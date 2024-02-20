@@ -6,17 +6,17 @@ import java.time.LocalDateTime
 import java.util.UUID
 
 @Entity
-@Table(name = "email")
-class EmailEntity(
+@Table(name = "send_email")
+class SendEmailEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     val emailId: UUID? = null,
-    val userId: UUID,
-    val emailFrom: String,
+    var userId: UUID? = null,
+    var emailFrom: String? = null,
     val emailTo: String,
     val subject: String,
     @Column(columnDefinition = "TEXT")
     val text: String,
-    val sendDate: LocalDateTime,
-    val statusEmail: StatusEmail,
+    var sendDate: LocalDateTime? = null,
+    var statusEmail: StatusEmail? = null,
 )
