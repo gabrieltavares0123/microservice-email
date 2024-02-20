@@ -1,6 +1,7 @@
 package com.ms.email.config
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.module.kotlin.registerKotlinModule
 import org.springframework.amqp.core.Queue
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter
 import org.springframework.beans.factory.annotation.Value
@@ -20,6 +21,7 @@ class RabbitMQConfig {
     @Bean
     fun messageConverter(): Jackson2JsonMessageConverter {
         val objectMapper = ObjectMapper()
+        objectMapper.registerKotlinModule()
         return Jackson2JsonMessageConverter(objectMapper)
     }
 }

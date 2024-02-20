@@ -1,10 +1,11 @@
 package com.ms.email.dto
 
+import com.fasterxml.jackson.annotation.JsonProperty
 import java.util.UUID
 
 data class EmailDto(
-    val userId: UUID,
-    val emailTo: String,
-    val subject: String,
-    val text: String,
+    @field:JsonProperty("userId") val userId: UUID,
+    @field:JsonProperty("emailTo") val emailTo: String,
+    @field:JsonProperty("subject") val subject: String,
+    @field:JsonProperty("text") val text: String,
 )
