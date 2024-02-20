@@ -1,4 +1,4 @@
-package com.ms.email.dto
+package com.ms.email.consumer
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import java.util.UUID
